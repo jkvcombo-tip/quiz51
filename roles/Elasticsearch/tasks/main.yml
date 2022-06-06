@@ -1,0 +1,17 @@
+---
+# tasks file for Elasticsearch
+
+
+- name: Install elasticsearch
+  apt:
+    name: elasticsearch
+    state: present
+    update_cache: yes
+    
+    
+- name: Start Elasticsearch Service
+  systemd:
+    state: started
+    name: elasticsearch
+    enabled: yes
+  ignore_errors: yes

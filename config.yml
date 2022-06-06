@@ -1,0 +1,22 @@
+---
+
+- hosts: all
+  tasks:
+    - name: Install and Configure Elasticsearch on Ubuntu
+      include_role:  
+        name: Elasticsearch
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+      
+- hosts: all
+  tasks:
+    - name: Install and Configure Kibana on Ubuntu
+      include_role:  
+        name: Kibana
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+      
+- hosts: all
+  tasks:
+    - name: Install and Configure Logstash on Ubuntu
+      include_role:  
+        name: Logstash
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

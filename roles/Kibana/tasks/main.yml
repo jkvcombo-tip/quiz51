@@ -1,0 +1,17 @@
+---
+# tasks file for Kibana
+
+
+- name: Install Kibana
+  apt:
+    name: kibana
+    state: present
+    update_cache: yes
+
+- name: Start and Enable Kibana
+  service:
+    name: kibana
+    state: started
+    enabled: yes
+
+

@@ -1,0 +1,15 @@
+---
+# tasks file for Logstash
+
+
+- name: Install Logstash
+  apt: 
+    name: logstash
+    state: present
+    update_cache: yes
+
+- name: Start and enable Logstash
+  service:
+    name: logstash
+    state: started
+    enabled: yes
